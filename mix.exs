@@ -32,7 +32,8 @@ defmodule ReactSurface.MixProject do
       {:jason, "~> 1.1"},
       {:surface, "~> 0.4.0"},
       {:node_ssr, github: "harmon25/node_ssr", branch: "main", runtime: false},
-      {:floki, ">= 0.27.0", only: :test}
+      {:floki, ">= 0.27.0", only: :test},
+      {:erlexec, "~> 1.18", override: true}
     ]
   end
 
