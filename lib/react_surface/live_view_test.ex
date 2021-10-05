@@ -15,8 +15,8 @@ defmodule ReactSurface.LiveViewTest do
     slot default, required: true
 
     def render(assigns) do
-      ~H"""
-      <slot/>
+      ~F"""
+      <#slot/>
       """
     end
   end
@@ -26,7 +26,7 @@ defmodule ReactSurface.LiveViewTest do
       import Phoenix.ConnTest
       import Phoenix.LiveViewTest
       import Phoenix.LiveView.Helpers, only: [live_component: 3, live_component: 4]
-      import Surface, only: [sigil_H: 2]
+      import Surface, only: [sigil_F: 2]
       import ReactSurface.LiveViewTest
     end
   end
@@ -45,7 +45,7 @@ defmodule ReactSurface.LiveViewTest do
 
       html =
         render_surface do
-          ~H"\""
+          ~F"\""
           <Link label="user" to="/users/1" />
           "\""
         end
@@ -90,7 +90,7 @@ defmodule ReactSurface.LiveViewTest do
 
       code =
         quote do
-          ~H"\""
+          ~F"\""
           <KeywordProp prop="some string"/>
           "\""
         end
@@ -131,7 +131,7 @@ defmodule ReactSurface.LiveViewTest do
       using_config TextInput, default_class: "default_class" do
         html =
           render_surface do
-            ~H"\""
+            ~F"\""
             <TextInput/>
             "\""
           end

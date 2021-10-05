@@ -16,8 +16,8 @@ defmodule ReactSurfaceTest do
     use Surface.LiveView
 
     def render(assigns) do
-      ~H"""
-       <Hello props={{ %{name: "NEW NAME"} }}/>
+      ~F"""
+       <Hello props={%{name: "NEW NAME"}}/>
       """
     end
   end
@@ -26,8 +26,8 @@ defmodule ReactSurfaceTest do
     use Surface.LiveView
 
     def render(assigns) do
-      ~H"""
-       <React component="Hello" props={{ %{test: "props"} }}/>
+      ~F"""
+       <React component="Hello" props={%{test: "props"}}/>
       """
     end
   end

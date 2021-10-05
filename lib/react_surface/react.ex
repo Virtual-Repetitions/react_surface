@@ -27,7 +27,13 @@ defmodule ReactSurface.React do
 
   def render(assigns) do
     id = build_id(assigns)
-    ~H"<div class={{@container_class}} :attrs={{build_attrs(%{assigns | id: id},  @opts )}}><div phx-update=\"ignore\" :attrs={{ [id: \"r\" <> id] }}><slot/></div></div>"
+    ~F"""
+    <div class={@container_class} :attrs={build_attrs(%{assigns | id: id},  @opts )}>
+      <div phx-update="ignore" :attrs={ [id: "r" <> id] }>
+      <slot/>
+      </div>
+    </div>
+    """
   end
 
   defp build_attrs(

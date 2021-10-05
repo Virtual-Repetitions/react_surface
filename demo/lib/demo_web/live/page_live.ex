@@ -9,13 +9,13 @@ defmodule DemoWeb.PageLive do
 
   @impl true
   def render(assigns) do
-    ~H"""
+    ~F"""
     <div>
-     <Simple id="simple_ssr" props={{@component_props}} />
-     <React :if={{@show_react}} component="HelloReactSurface" props={{@component_props}}/>
-     <React component="DoesNotExist" props={{@component_props}}/>
+     <Simple id="simple_ssr" props={@component_props} />
+     <React :if={@show_react} component="HelloReactSurface" props={@component_props}/>
+     <React component="DoesNotExist" props={@component_props}/>
 
-     <HelloReactSurface rid="2" props={{@component_props}} />
+     <HelloReactSurface rid="2" props={@component_props} />
      <button type="button" phx-click="toggle-react">Toggle React</button>
     </div>
     """

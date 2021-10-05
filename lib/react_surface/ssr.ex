@@ -20,8 +20,8 @@ defmodule ReactSurface.SSR do
 
   Which can now be used in any surface component
   ```elixir
-  ~H\"\"\"
-   <ReactComponent id="a_unique_id" props={{@dynamic_props}}/>
+  ~F"""
+   <ReactComponent id="a_unique_id" props={@dynamic_props}/>
   \"\"\"
   ```
   """
@@ -47,8 +47,8 @@ defmodule ReactSurface.SSR do
 
       @impl true
       def render(var!(assigns)) do
-        ~H"""
-        <React rid={{@rid || nil}} ssr={{true}} opts={{@opts}} container_class={{@container_class}} component={{component_name()}} props={{@props}}>{{ {:safe, get_ssr()} }}</React>
+        ~F"""
+        <React rid={@rid || nil} ssr={true} opts={@opts} container_class={@container_class} component={component_name()} props={@props}>{{:safe, get_ssr()}}</React>
         """
       end
 
